@@ -1,28 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>BMI index</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/variables.css" />
+    <title>IMC index</title>
+  </head>
+  <body>
     <div class="container">
-        <h1>BMI Calculator</h1>
+      <div class="title-bar">
+        <h1>Calculator IMC</h1>
+      </div>
+      <div class="content-box">
         <form>
-        <p><label>Height in CM: </label><input type="text" id="height"></p>
-        <p><label>Weight in KG: </label><input type="text" id="weight"></p>
-        <div id="results"></div>
-        <button script="window.location.reload()">Reset</button>
-        <div id="weight-guide">
-        <h3>BMI Weight Guide</h3>
-        <p>Under Weight = Less than 18.6</p>
-        <p>Normal Range = 18.6 and 24.9</p>
-        <p>Overweight = Greater than 24.9</p>
-        </div>
+          <div class="input-container">
+            <div class="inputs">
+              <label>Inaltimea in CM: </label><input type="text" id="height" />
+            </div>
+            <div class="inputs">
+              <label>Greutatea in KG: </label><input type="text" id="weight" />
+            </div>
+          </div>
+          <div class="btn-container">
+            <button class="calc-btn btn" script="window.location.reload()">
+              Calculeaza
+            </button>
+            <button class="reset-btn btn" script="window.location.reload()">
+              Reseteaza
+            </button>
+          </div>
         </form>
+        <div id="weight-guide">
+          <h3>Ghid al Greutatii IMC</h3>
+          <p>Subponderal = Mai putin de 18.6</p>
+          <p>Normoponderal = Intre 18.6 si 24.9</p>
+          <p>Supraponderal = Mai mare de 24.9</p>
         </div>
+        <div id="results"></div>
+      </div>
+    </div>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>

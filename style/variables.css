@@ -1,0 +1,30 @@
+:root {
+  --font-size-default: 17px;
+  --font-size-default-hover: calc(var(--font-size-default) + 1px);
+  --font-size-btn-text: calc((--font-size-default) + 3px);
+  --font-size-subtitle: 18px;
+  --font-size-title: calc(var(--font-size-subtitle) + 5px);
+  --photo-principal: 160px;
+  --photo-height-portfolio: 300px;
+  --line-height-default: 26px;
+  --width-controls: 100%;
+  --height-controls: 80px;
+  --gap-portfolio-list: 20px;
+  --color-primary: black;
+  --color-secondary: white;
+  --color-primary-background: white;
+  --color-title-bar: rgb(34, 34, 176);
+  --color-btn-calc: rgb(34, 34, 176);
+  --color-btn-reset: rgb(134, 134, 134);
+  --transition-1: all 0.4s ease-in-out;
+  --border-size: 2px;
+  --padding-size: 10px
+  //btn container
+  --gap-size: 5px;
+}
+
+h1 {
+  vertical-align: middle;
+  text-align: center;
+  font-size: var(--font-size-title);
+}/*# sourceMappingURL=variables.css.map */

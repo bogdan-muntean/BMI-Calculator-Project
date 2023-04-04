@@ -1,31 +1,23 @@
-// Homework optional BMI +2p activitate
+const calcBtn = document.querySelector(".calc-btn");
+let imc = 0;
 
-//     Utilizatorul poate introduce greutate si inaltinea de la tastatura
-//     Rezultatul va fi afisat pe ecran si calculul in real-time, adica odata ce utilizatorul modifica oricare dintre input-uri
-//     Button de reset
-
-
-const form = document.querySelector('form');
-
-form.addEventListener('change', function(e){
-    e.preventDefault();
-    
-    const height = parseInt(document.querySelector('#height').value);
-    const weight = parseInt(document.querySelector('#weight').value);
-    const results = document.querySelector('#results');
-    
-    if((height === '') || (height < 0) || (isNaN(height))){
-        //NaN !== NaN
-        results.innerHTML = "Please provide a valid height";
-        
-    } else if (weight === '' || weight < 0 || isNaN(weight)){
-        results.innerHTML = "Please provide a valid weight";
-    } else {
-    //calculate BMI
-    const bmi = (weight / ((height*height)/10000)).toFixed(2);
-    //display the results
-    results.innerHTML = `<span>${bmi}</span>`
-    }
-    
-    
+calcBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  const cm = parseInt(document.querySelector("#height").value);
+  const kg = parseInt(document.querySelector("#weight").value);
+  const results = document.querySelector("#results");
+  let resultToAdd = "";
+  if (cm === "" || cm < 0 || isNaN(cm))
+    resultToAdd += "Introduceti o valoarea corecta pentru inaltime. \n";
+  if (kg === "" || kg < 0 || isNaN(kg))
+    resultToAdd += "Introduceti o valoarea corecta pentru greutate. \n";
+  else {
+    const m = cm / 100.0;
+    imc = (kg / (m * m)).toFixed(2);
+    let color = "";
+    if (imc < 18.6 || imc > 24.9) color = "red";
+    else if (imc >= 18.6 && imc <= 24.9) color = "green";
+    resultToAdd = `IMC-ul este <span class="imc" style="color:${color};">${imc}</span>`;
+  }
+  results.innerHTML = resultToAdd;
 });
